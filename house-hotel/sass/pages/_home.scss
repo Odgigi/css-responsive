@@ -1,0 +1,65 @@
+.hero {
+    background-color: blanchedalmond;
+    height: calc(100vh - $header-height);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background-image: linear-gradient(rgba(0,0,0,0.5), transparent), url(../img/pexels-armin-rimoldi-5265237.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    text-align: center;
+    font-size: 40px;
+    font-style: italic;
+    color: #fff;
+}
+
+.services {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    padding: 30px;
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    width: 300px;
+    min-height: 500px;
+    padding: 30px 15px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    transition: .3s;
+}
+
+.card:hover {
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+

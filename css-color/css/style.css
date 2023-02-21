@@ -1,0 +1,10 @@
+h1 {
+    /* color name */
+    color:red;
+    /* rgb | rgba -> alpha pour la transparence de 0 à 1 */
+    color: rgba(255, 0, 0, 0.877);
+    /* hexadécimal */
+    color: #ff0000d2;
+    /* hsl: hue= teinte saturation lightness*/
+    color: hsl(0, 100%, 50%);
+}
