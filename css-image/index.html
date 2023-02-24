@@ -10,15 +10,20 @@
 <body>
     <div>
         <h1>Les images responsive</h1>
+        <p>L'attribut srcset="" permet de définir une image adaptée au terminal de consultation en ciblant la taille de l'écran, et également la densité de pixels.</p>
         <div class="container">
-            <img srcset="assets/img/pexels-matteo-milan-1920x3413.jpg 1920w,assets/img/pexels-mathias-reding-1280x2276.jpg 1280w, assets/img/pexels-eugenia-remark-640x1138.jpg 640w" sizes="60w" src="assets/img/pexels-matteo-milan-1920x3413.jpg" alt="Salle à manger d'apparat">
+            <img srcset="assets/img/pexels-matteo-milan-1920x3413.jpg 1920w,assets/img/pexels-mathias-reding-1280x2276.jpg 1280w, assets/img/pexels-eugenia-remark-640x1138.jpg 640w"
+            sizes="60vw" 
+            src="assets/img/pexels-matteo-milan-1920x3413.jpg" 
+            alt="Salle à manger d'apparat"
+            class="container-img"/>
         </div>
         <div class="container">
-            <picture> <!--balise picture regroupe différentes ressources-->
+            <picture class="container-img"> <!--balise picture regroupe différentes ressources-->
                 <source media="(max-width: 640px)" srcset="assets/img/pexels-eugenia-remark-640x1138.jpg">
                 <source media="(max-width: 1280px)" srcset="assets/img/pexels-mathias-reding-1280x2276.jpg">
                 <source media="(max-width: 1920px)" srcset="assets/img/pexels-matteo-milan-1920x3413.jpg">
-                <img src="assets/img/pexels-mathias-reding-1280x2276.jpg" alt="Tour Eiffel et manège">
+                <img class="container-img" src="assets/img/pexels-mathias-reding-1280x2276.jpg" alt="Tour Eiffel et manège">
             </picture>
         </div>
         <div class="container">

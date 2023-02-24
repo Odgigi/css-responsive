@@ -1,18 +1,34 @@
+/* https://cubic-bezier.com/#.17,.67,.83,.67 */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    font-size: 20px;
+}
+
+h1 {
+    margin: 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* CONTAINER */
 .container {
     width: 100px;
     height: 100px;
     background-color: pink;
     margin: 30px auto;
-    transition: 1s 1s; /* propriété raccourcie : 1e valeur obligatoire = durée; 2e valeur = délai avant la transition */
-    /* on la met sur le container pour qu'elle se fasse et au survol et au retrait de la souris */
+    /* transition: 1s 1s; propriété raccourcie : 1e valeur obligatoire = durée; 2e valeur = délai avant la transition */
+    /* on la met sur le container pour qu'elle se fasse ET au survol ET au retrait de la souris */
     /* transition: all; => transition va se faire sur tous les éléments contenus dans .container:hover */
-    /* transition: width 1s 0.5s, height 1s 2s, background-color 1s 3s; */
+    transition: width 1s 0.5s, height 1s 2s, background-color 1s 3s;
 }
 .container:hover {
         background-color: green;
@@ -20,15 +36,18 @@
         height: 200px;
 }
 
+
+/* CONTAINER 2 */
 .container-2 {
     width: 200px;
     height: 200px;
     background-color: blue;
     margin: 30px auto;
     border-radius: 50%;
-    /* transition: la largeur et la hauteur se font en 1s sans délai et l'arrondi se fait en 1s mais avec un délai d'1s */
-    /* transition: durée délai timing-function = vitesse d'animation (cubic-bezier: rapport entre vitesse et progression) => par défaut sur ease, on peut la rendre plus ou moins linéaire */
+    /* transition: durée délai timing-function = vitesse d'animation 
+    cubic bezier => par défaut sur ease */
     transition: width 1s, height 1s, border-radius 1s 1s;
+    /* transition: la largeur et la hauteur se font en 1s sans délai et l'arrondi se fait en 1s mais avec un délai d'1s */
 }
 
 .container-2:hover {
@@ -37,14 +56,16 @@
     border-radius: 0;
 }
 
+
+/* CONTAINER 3 */
+/* La propriété transform vous permet de manipuler visuellement un élément en le faisant pivoter (rotate), en le déplaçant (translate), en le mettant à l'échelle (scale) */
 .container-3 {
     width: 200px;
     height: 200px;
     background-color: rgb(240, 32, 146);
-    margin: 30px auto;
-    opacity: 0;
+    margin: 50px auto;
+    opacity: 0.5;
     transition: opacity 1s, transform 1s 1s;
-
 }
 
 .container-3:hover {
@@ -53,7 +74,7 @@
     /* transform: scale(1.2); scale = zoom 1.2 = 20% scaleX = à l'horizontale scaleY= à la verticale */
     /* transform: translate pour déplacer l'élément */
     /* transform: translate(-20px, 20px); -20% sur la gauche 20% vers le bas sur l'axe Y */
-    transform: scale(1.2) translate(10px) rotate(45deg);
+    transform: rotate(45deg) scale(1.2) translate(10px) ;
 }
 
 a {
@@ -65,17 +86,21 @@ a:hover {
     color: red;
 }
 
+
+/* CONTAINER 4 */
 .container-4 {
     width: 100px;
     height: 100px;
     background-color: seagreen;
-    border-radius: 50%;margin: 30px auto;
+    border-radius: 50%;
+    margin: 30px auto;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: opacity 1s, transform 1s 0.5s; /* par défaut sur all > s'applique à tous les éléments du :hover */
 }
 
+/* au survol moitié transparent, rotation de 360deg déplacer vers la droite de 200px */
 .wrapper:hover .container-4 {
     opacity: 0.5;
     transform: translateX(200px) rotate(360deg) ;
@@ -85,6 +110,8 @@ a:hover {
     background-color: brown;
 }
 
+/* CONTAINER 5*/
+/* utilisation de l'animation turn */
 .container-5 {
     width: 100px;
     height: 100px;
@@ -92,24 +119,27 @@ a:hover {
     background-color: grey;
     margin: 30px auto;
     animation: turn 1s 2s linear infinite alternate;
+    /* nom, durée, délai, nb de répétitions, sens de l'animation */
 }
 @keyframes turn {
-    from {
+    0% {
         transform: translateX(0);
         opacity: 1;
     } 50% {
         opacity: 0;
-    } 10% {
-        transform: translate(200px);
+    } 100% {
+        transform: translateX(200px);
         opacity: 1;
     }
 }
 
-
+/* DOWNLOAD */
 .wrapper3 {
-    padding: 100px;
+    padding: 70px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 30px;
     background-color: aqua;
 }
@@ -120,7 +150,8 @@ a:hover {
     background-color: goldenrod;
     margin: 30px;
     border-radius: 50%;
-    animation: jump 1s ease-out infinite alternate;
+    animation: jump 1s infinite ease-out alternate;
+    /* utilisation de l'animation jump */
 }
 
 .circle2 {
@@ -129,7 +160,8 @@ a:hover {
     background-color: goldenrod;
     margin: 30px;
     border-radius: 50%;
-    animation: jump 1s 0.5s ease-out infinite alternate;
+    animation: jump 1s 0.5s infinite ease-out alternate;
+    /* nom, durée, délai, nb de répétitions, sens de l'animation */
 }
 .circle3 {
     width: 50px;
@@ -137,30 +169,56 @@ a:hover {
     background-color: goldenrod;
     margin: 30px;
     border-radius: 50%;
-    animation: jump 1s 1s ease-out infinite alternate;
+    animation: jump 1s 1s infinite ease-out alternate;
+    /* transition-timing-function: ease-out; */
 }
 
 @keyframes jump {
-    from {
-        transform: translateY(0);
-    } to {
+    0% {
+        transform: translate(0);
+    } 
+    100% {
         transform: translateY(100px);
     }
 }
 
+
+/* TEXT ANIMATION */
 .container-6 {
     width: 200px;
     height: 300px;
     background-color: tan;
     border: 1px solid #333 0.7;
-    margin: 30px auto;
+    margin: 200px auto 0;
     padding: 15px;
     opacity: 0;
-    transition: opacity 3s transform 3s 0.5s cubic-bezier(0.2, -2, 0.8, 2);
-    /* transition-timing-function: ; */
+    /* overflow: hidden; */
+    /* si le texte déborde */
 }
 
-.ease {
+.wrapper4:hover .container-6 {
+    opacity: 1;
+    transform: translateY(-200px);
+    transition: opacity 3s transform 3s 0.5s cubic-bezier(0.2, -2, 0.8, 2);
+}
+
+/* p {
+    animation: show 2s;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+
+
+/* .ease {
         transition-timing-function: ease;
       }
 .easein {
@@ -177,10 +235,5 @@ a:hover {
       }
 .cb {
         transition-timing-function: cubic-bezier(0.2, -2, 0.8, 2);
-    }
-
-.wrapper4:hover .container-6 {
-    opacity: 1;
-    transform: translateY(-200px);
-}
+    } */
 

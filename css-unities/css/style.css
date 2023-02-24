@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 20px;
+}
+
+body {
+    background-color: olivedrab;
+}
+
+h2 {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.container {
+    width: 60%;
+    height: 200px;
+    margin: 50px auto;
+    background-color: pink;
+}
+
+.child-container {
+    background-color: rgb(102, 102, 190);
+    width: 30%; /* prend 30% de son container */
+    height: 50%; /* idem 50% */
+    margin: 0 auto; /* margin auto pour centrer ok */
+}
+
+.container-2 {
+    width: 50vw; /* si je mets 300px n'apparaît pas */
+    height: 50vh; /* s'adapte/ s'efface devant son enfant ? */
+    background-color: brown;
+}
+
+.child-container-2 {
+    width: 30vw; /* vw et vh vont de 0 à 100 = 100% de la largeur / hauteur de l'écran */
+    height: 30vw; /* si je veux un carré j'utilise l'unité vw même pour la hauteur */
+    background-color: orange;
+}
+
+.container-3 {
+    width: 20em; /* em relatif à la taille du texte = 16px */
+    height: 300px;
+    background-color: coral;
+    margin: 30px auto;
+    font-size: 16px;
+}
+
+.child-container-3 {
+    width: 10em;
+    height: 10em;
+    background-color: greenyellow;
+    padding: 1em; /* prend comme référence la taille de la police de l'élément parent */
+    /* si font-size du parent fait 10px > le padding fera 10px, si 16px > padding 16px */
+    /* les rem ne tiennent pas compte des parents mais valeur par défaut = 16px */
+    /* si jamais je veux définir une taille par défaut il faut la mettre sur le parent du body > html */
+}
+
+/* https://graphiste.com/blog/unites-mesure-css
+
+Les unités absolues sont les suivantes :
+Les pixels (px)
+Les pouces (in)
+Les centimètres (cm)
+Les millimètres (mm)
+Les picas (pc)
+Les points (pt)
+La plupart du temps, vous n’utiliserez que le pixel ou le point, mais il est bon de comprendre la relation entre ces unités de mesure.
+
+1 in = 96 px, 1 cm = 37,8 px et 1 mm = 3,78 px.
+
+.box {
+width : 150px ;
+height : 150px ;
+}
+L’élément box aura la même dimension (150 x 150 pixels), quelle que soit la taille de l’écran.
+
+Les unités relatives au texte :
+À l’opposé des unités absolues, il existe des unités qui font varier la taille d’un élément en fonction de la taille de la police ou de l’élément parent.
+
+Ces unités dites relatives au texte sont de plus en plus utilisées pour harmoniser les éléments d’un design. On retrouve :
+
+Em : proportionnelle à la taille de la police de l’élément parent ou du document.
+Par défaut, 1 em = 16 px si aucune taille de police n’est définie.
+
+Rem : l’unité rem fait toujours référence à la taille de la police de l’élément racine. En d’autres termes, elle dépend du font-size défini par défaut.
+
+Ex : très rarement utilisée, cette unité est relative à la hauteur de la police actuelle en minuscules.
+Ch : cette unité est elle aussi peu utilisée, elle est relative à la largeur du caractère “0”.
+Parmi ces unités relatives au texte, vous serez amené à utiliser le em. Cette unité de mesure permet de garder un texte lisible. Autre avantage, si vous souhaitez modifier la taille de votre police d’écriture, vos éléments enfants s’ajusteront automatiquement.
+
+Les unités relatives au viewport :
+D’autres unités permettent aux éléments de s’adapter à la taille du viewport, c’est-à-dire respectivement à la hauteur (vh) et à la largeur (vw) de la fenêtre du navigateur.
+
+Ces unités relatives au viewport sont essentielles pour mettre en place un design responsive :
+
+La hauteur du viewport (vh)
+La largeur du viewport (vw)
+Le viewport minimum (vmin)
+Le viewport maximum (vmax)
+
+1 vh = 1 % de la hauteur du viewport et 1 vw = 1 % de la largeur du viewport.
+
+L’unité de mesure vh est généralement utilisée pour permettre à un élément de s’adapter à la hauteur totale de la fenêtre :
+
+.box {
+height :100vh ;
+background : red ;
+}
+
+L’élément box a une hauteur de 100 % par rapport à la hauteur de la fenêtre de navigation.
+
+h1{
+font-size : 6 vw ;
+}
+
+La taille du titre H1 correspond à 6% de la largeur de la fenêtre. Par conséquent, si cette dernière est de 1000 px, la taille de la police sera de 60 px.
+
+Les unités vmin et vmax :
+Avec le vmin, c’est la dimension minimale du viewport qui est prise en compte.
+Par exemple, si ce dernier est de 1000 px de haut par 800 px de large, les éléments ayant une unité vmin s’adapteront en fonction de la largeur de la fenêtre.
+
+Avec le vmax, les éléments s’adaptent en fonction de la dimension maximale du viewport. Selon l’exemple précédent, 1 vmax = 10 px.
+
+Les unités en pourcentage :
+Le pourcentage fait partie des unités relatives de façon générale puisqu’il s’adapte en fonction de son élément parent.
+
+La plupart du temps, cette unité est utilisée pour définir la hauteur et la largeur d’un élément. On la retrouve notamment dans le framework Bootstrap.

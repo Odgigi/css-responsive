@@ -5,7 +5,7 @@
 }
 
 body {
-    /* background-color: pink; */
+    background-color: pink;
 }
 
 .container {
@@ -27,10 +27,10 @@ body {
 
 .container article:nth-child(1) {
     grid-column: span 3;
-    /* background-color: green; */
+    background-color: seagreen;
 }
 
 .container article:nth-child(4) {
     grid-column: span 4;
-    /* background-color: slateblue; */
+    background-color: slateblue;
 }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS - Transition</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>Les transitions CSS</h1>
+            <p>
+                Les transitions CSS permettent de contrôler la vitesse d'animation lorsque les propriétés CSS sont modifiées.
+                <br />
+                Plutôt que le changement soit immédiat, on peut l'étaler sur une certaine période. Dans la propriété raccourcie {transition: 1s 1s;} seule la 1ère valeur (= durée) est obligatoire ; la 2e valeur, optionnelle, est le délai avant la transition.
+                <br />
+                Ainsi, si on souhaite passer un élément de blanc à noir, on pourra utiliser les transitions CSS afin que cette modification soit effectuée progressivement, selon une courbe d'accélération donnée.
+                <br>
+            </p>
+            <p>
+                La fonction cubic-bezier() permet d'indiquer le rapport entre vitesse et progression pour les animations et les transitions.
+                <br>
+                La courbe de Bezier est un outil mathématique qui permet de définir une courbe avec seulement 4 valeurs numériques.
+                <br>
+                Par défaut sur ease, on peut la rendre plus ou moins linéaire :
+                <br>
+                
+                <div class="box"></div>
+                
+                <pre>
+                .ease {
+                    transition-timing-function: ease;
+                  }
+                .easein {
+                    transition-timing-function: ease-in;
+                  }
+                .easeout {
+                    transition-timing-function: ease-out;
+                  }
+                .easeinout {
+                    transition-timing-function: ease-in-out;
+                  }
+                .linear {
+                    transition-timing-function: linear;
+                  }
+                .cb {
+                    transition-timing-function: cubic-bezier(0.2, -2, 0.8, 2);
+                }
+                </pre>
+            </p>
+            <p>
+              En outre, on la met sur le container (.box) pour qu'elle se fasse ET au survol ET au retrait de la souris (.box:hover).
+              <br>
+              De plus, par défaut la propriété {transition: all;} est activée => la transition va se faire sur tous les éléments contenus dans le container.
+            </p>
+        </div>
+    </body>
+</html>

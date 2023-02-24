@@ -1,7 +1,7 @@
 /* 1. Sélectionnez seulement les éléments qui ont les classes "title" ET "main-title" en même temps et donnez-leur un background "khaki" */
 
 .title.main-title { /* on colle les 2 classes pour additionner les deux */
-    color: khaki;
+    background-color: khaki;
 }
 
 
@@ -56,7 +56,7 @@ li:not(li:nth-child(5)) {
 
 /* 9. Sélectionnez seulement les liens pointant vers des sites sécurisés(https) et donnez-leur un fond "plum"*/
 
-a[href^="https"]  { /* ^= permet de sélectionner les éléments qui comment par [""] */
+a[href^="https"]  { /* ^= permet de sélectionner les éléments qui commencent par [""] */
     background-color: plum;
 }
 
